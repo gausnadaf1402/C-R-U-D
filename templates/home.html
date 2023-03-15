@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD OPERATION</title>
+    <link rel="stylesheet" href="static/home.css">
+</head>
+<body>
+    {{msg}}
+    <div id="divtwo">
+        <form action="/show">
+            <input type="submit" value="show Records" style="border-radius: 25px;padding: 7px;border: none;background: #000;color: #fff; cursor:pointer;">
+        </form>
+    </div>
+
+<div id="divone">
+    <form action="/send" method="post">{%csrf_token%}
+        <h3>ID <input required autofocus type="text" name="id" id="id" style="border-radius: 24px;"></h3>
+        <h3>Data 1 <input required type="text" name="data1" style="border-radius: 24px;"></h3>
+        <h3>Data 2 <input required type="text" name="data2" style="border-radius: 24px;"></h3>
+        <input type="submit" id="btn">
+    </form>
+</div>
+</body>
+</html>

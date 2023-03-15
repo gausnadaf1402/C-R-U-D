@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Data</title>
+    <link rel="stylesheet" href="/static/show.css">
+</head>
+<body>
+    {{msg}}
+    <h2 id="head">Show All Data</h2>
+    <div id="seconddiv">
+        <form action="/">
+            <input type="submit" value="<<Back" style="position: relative;top: -52px;width: 7vw;height: 28px;">
+        </form>
+    </div>
+    <div id="onediv" style="margin-left: 115px;margin-right: 106px; bottom:34px; position:relative;">
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Data 1</th>
+                <th>Data 2</th>
+                <th>Buttons</th>
+            </thead>
+            {%for d in data%}
+            <tr>
+                <td>{{d.ID}}</td>
+                <td>{{d.Data1}}</td>
+                <td>{{d.Data2}}</td>
+                <td>
+                    <a href="/edit?id={{d.ID}}">Edit</a>
+                    <a href="/delete?id={{d.ID}}">Delete</a>
+                </td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+</body>
+</html>
